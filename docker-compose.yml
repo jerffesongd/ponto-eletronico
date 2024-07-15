@@ -1,0 +1,12 @@
+services:
+  core:
+    container_name: core-ponto
+    image: core-ponto:1.0.0
+    ports:
+      - "3000:3000"
+    build:
+      context: ./core
+      dockerfile: Dockerfile
+    volumes:
+      - ./core:/home/node/core
+    command: sh "./start.sh"
